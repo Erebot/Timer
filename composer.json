@@ -1,0 +1,41 @@
+{
+    "prefer-stable": true,
+    "name": "erebot/timer",
+    "description": "Call a method/function after a certain amount of time has passed",
+    "keywords": ["timer"],
+    "homepage": "https://github.com/Erebot/Timer",
+    "license": "GPL-3.0+",
+    "authors": [
+        {
+            "name": "François Poirotte",
+            "email": "clicky@erebot.net",
+            "role": "lead"
+        }
+    ],
+    "support": {
+        "email": "erebot@erebot.net",
+        "issues": "https://github.com/Erebot/Timer/issues",
+        "wiki": "http://erebot.github.io/Erebot/",
+        "irc": "irc://irc.iiens.net/Erebot",
+        "source": "https://github.com/Erebot/Timer"
+    },
+    "require": {
+        "php": ">=5.3.0",
+        "erebot/callable-wrapper": "1.0.*@dev",
+        "ext-spl": "*"
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "*",
+        "phpunit/phpunit": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Erebot\\Timer\\": "src/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.x-dev"
+        }
+    }
+}
