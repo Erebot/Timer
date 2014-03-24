@@ -11,12 +11,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Erebot/CallableWrapper.git",
-                "reference": "99da5b295ec93c9fd2d070429825b5af6aeffdd5"
+                "reference": "4a2c7eb0adc4283892812ec98da0d37c654bb3c0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Erebot/CallableWrapper/zipball/99da5b295ec93c9fd2d070429825b5af6aeffdd5",
-                "reference": "99da5b295ec93c9fd2d070429825b5af6aeffdd5",
+                "url": "https://api.github.com/repos/Erebot/CallableWrapper/zipball/4a2c7eb0adc4283892812ec98da0d37c654bb3c0",
+                "reference": "4a2c7eb0adc4283892812ec98da0d37c654bb3c0",
                 "shasum": ""
             },
             "require": {
@@ -54,7 +54,7 @@
             "keywords": [
                 "callable"
             ],
-            "time": "2014-03-23 07:53:05"
+            "time": "2014-03-23 09:55:12"
         }
     ],
     "packages-dev": [
