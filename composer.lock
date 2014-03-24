@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "0b10d520d0e9e022c6c9bad9edfe75e5",
+    "hash": "547bae6e491881b569eefc4ceb09a393",
     "packages": [
         {
             "name": "erebot/callable-wrapper",
@@ -11,12 +11,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Erebot/CallableWrapper.git",
-                "reference": "4a2c7eb0adc4283892812ec98da0d37c654bb3c0"
+                "reference": "24deab0a801b395babb6f3a4efa22243ecadef65"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Erebot/CallableWrapper/zipball/4a2c7eb0adc4283892812ec98da0d37c654bb3c0",
-                "reference": "4a2c7eb0adc4283892812ec98da0d37c654bb3c0",
+                "url": "https://api.github.com/repos/Erebot/CallableWrapper/zipball/24deab0a801b395babb6f3a4efa22243ecadef65",
+                "reference": "24deab0a801b395babb6f3a4efa22243ecadef65",
                 "shasum": ""
             },
             "require": {
@@ -35,7 +35,7 @@
             },
             "autoload": {
                 "psr-4": {
-                    "Erebot\\CallableWrapper\\": "src/"
+                    "Erebot\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -54,7 +54,7 @@
             "keywords": [
                 "callable"
             ],
-            "time": "2014-03-23 09:55:12"
+            "time": "2014-03-24 15:07:58"
         }
     ],
     "packages-dev": [

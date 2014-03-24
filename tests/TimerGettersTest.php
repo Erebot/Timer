@@ -20,7 +20,7 @@ class TimerGettersTest extends PHPUnit_Framework_TestCase
 {
     protected $flag;
 
-    public function helper(\Erebot\Timer\Timer $timer, $foo, $bar)
+    public function helper(\Erebot\Timer $timer, $foo, $bar)
     {
         $this->assertNotEquals('bar', $foo);
         $this->assertEquals('bar', $bar);
@@ -28,18 +28,18 @@ class TimerGettersTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers \Erebot\Timer\Timer::getArgs
-     * @covers \Erebot\Timer\Timer::getCallback
-     * @covers \Erebot\Timer\Timer::getDelay
-     * @covers \Erebot\Timer\Timer::getRepetition
-     * @covers \Erebot\Timer\Timer::__construct
-     * @covers \Erebot\Timer\Timer::__destruct
+     * @covers \Erebot\Timer::getArgs
+     * @covers \Erebot\Timer::getCallback
+     * @covers \Erebot\Timer::getDelay
+     * @covers \Erebot\Timer::getRepetition
+     * @covers \Erebot\Timer::__construct
+     * @covers \Erebot\Timer::__destruct
      */
     public function testGetters()
     {
-        $callback   = new \Erebot\CallableWrapper\Main(array($this, 'helper'));
+        $callback   = new \Erebot\CallableWrapper(array($this, 'helper'));
         $args       = array('foo', 'bar');
-        $timer      = new \Erebot\Timer\Timer($callback, 4.2, 42, $args);
+        $timer      = new \Erebot\Timer($callback, 4.2, 42, $args);
         $this->assertEquals($args, $timer->getArgs());
         $this->assertEquals($callback, $timer->getCallback());
         $this->assertEquals(4.2, $timer->getDelay());
@@ -47,14 +47,14 @@ class TimerGettersTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers \Erebot\Timer\Timer::setRepetition
-     * @covers \Erebot\Timer\Timer::getRepetition
+     * @covers \Erebot\Timer::setRepetition
+     * @covers \Erebot\Timer::getRepetition
      */
     public function testRepetition()
     {
-        $callback   = new \Erebot\CallableWrapper\Main(array($this, 'helper'));
+        $callback   = new \Erebot\CallableWrapper(array($this, 'helper'));
         $args       = array('foo', 'bar');
-        $timer      = new \Erebot\Timer\Timer($callback, 42, FALSE, $args);
+        $timer      = new \Erebot\Timer($callback, 42, FALSE, $args);
 
         $this->assertEquals(1, $timer->getRepetition());
         $timer->setRepetition(TRUE);

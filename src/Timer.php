@@ -18,13 +18,13 @@
     along with Erebot.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-namespace Erebot\Timer;
+namespace Erebot;
 
 /**
  * \brief
  *      An implementation of timers.
  */
-class Timer implements \Erebot\Timer\TimerInterface
+class Timer implements \Erebot\TimerInterface
 {
     /// A file descriptor which is used to implement timers.
     protected $handle;

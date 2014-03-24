@@ -25,7 +25,7 @@ class TimerTest extends PHPUnit_Framework_TestCase
 
     protected $flag;
 
-    public function helper(\Erebot\Timer\Timer $timer, $foo, $bar)
+    public function helper(\Erebot\Timer $timer, $foo, $bar)
     {
         $this->assertNotEquals('bar', $foo);
         $this->assertEquals('bar', $bar);
@@ -38,16 +38,16 @@ class TimerTest extends PHPUnit_Framework_TestCase
      * We create a timer set to go off twice with a delay of 2.5 seconds.
      * We check that each parameter is correctly set before each run.
      *
-     * @covers \Erebot\Timer\Timer::reset
-     * @covers \Erebot\Timer\Timer::getStream
-     * @covers \Erebot\Timer\Timer::activate
-     * @covers \Erebot\Timer\Timer::__construct
-     * @covers \Erebot\Timer\Timer::__destruct
+     * @covers \Erebot\Timer::reset
+     * @covers \Erebot\Timer::getStream
+     * @covers \Erebot\Timer::activate
+     * @covers \Erebot\Timer::__construct
+     * @covers \Erebot\Timer::__destruct
      */
     public function testNominalCase()
     {
-        $this->timer = new \Erebot\Timer\Timer(
-            new \Erebot\CallableWrapper\Main(array($this, 'helper')),
+        $this->timer = new \Erebot\Timer(
+            new \Erebot\CallableWrapper(array($this, 'helper')),
             $this->delay,
             2,
             array('foo', 'bar')
