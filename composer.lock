@@ -11,12 +11,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Erebot/CallableWrapper.git",
-                "reference": "24deab0a801b395babb6f3a4efa22243ecadef65"
+                "reference": "8aeb93e6e945e29139f33b88668eb89d7dd65f55"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Erebot/CallableWrapper/zipball/24deab0a801b395babb6f3a4efa22243ecadef65",
-                "reference": "24deab0a801b395babb6f3a4efa22243ecadef65",
+                "url": "https://api.github.com/repos/Erebot/CallableWrapper/zipball/8aeb93e6e945e29139f33b88668eb89d7dd65f55",
+                "reference": "8aeb93e6e945e29139f33b88668eb89d7dd65f55",
                 "shasum": ""
             },
             "require": {
@@ -54,7 +54,7 @@
             "keywords": [
                 "callable"
             ],
-            "time": "2014-03-24 15:07:58"
+            "time": "2014-03-27 12:37:58"
         }
     ],
     "packages-dev": [
@@ -307,16 +307,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "4.0.12",
+            "version": "4.0.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "e7631ea91f9e41149c55527047b5dee94538ae1d"
+                "reference": "fca5bc6a50d09b26db280c5cc3c84978c9cace3f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/e7631ea91f9e41149c55527047b5dee94538ae1d",
-                "reference": "e7631ea91f9e41149c55527047b5dee94538ae1d",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/fca5bc6a50d09b26db280c5cc3c84978c9cace3f",
+                "reference": "fca5bc6a50d09b26db280c5cc3c84978c9cace3f",
                 "shasum": ""
             },
             "require": {
@@ -378,7 +378,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2014-03-20 16:22:50"
+            "time": "2014-03-26 11:55:27"
         },
         {
             "name": "phpunit/phpunit-mock-objects",

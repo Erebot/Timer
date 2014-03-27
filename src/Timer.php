@@ -225,7 +225,7 @@ class Timer implements \Erebot\TimerInterface
             'var_dump(42); ' .  // Required to make the subprocess send
                                 // a completion notification back to us.
             // We add the name of the callback (useful when debugging).
-            '// '.addslashes($this->callback).'"';
+            '// '.addslashes(\Erebot\CallableWrapper::represent($this->callback)).'"';
 
         $this->resource = proc_open(
             $command,
@@ -255,6 +255,6 @@ class Timer implements \Erebot\TimerInterface
     {
         $this->cleanup();
         $args = array_merge(array(&$this), $this->args);
-        return (bool) $this->callback->invokeArgs($args);
+        return (bool) call_user_func_array($this->callback, $args);
     }
 }
