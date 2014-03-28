@@ -54,7 +54,7 @@ class Timer implements \Erebot\TimerInterface
      * Creates a new timer, set off to call the given callback
      * (optionally, repeatedly) when the associated delay passed.
      *
-     * \param callback $callback
+     * \param Erebot::CallableInterface $callback
      *      The callback to call when the timer expires.
      *      See http://php.net/manual/en/language.pseudo-types.php
      *      for acceptable callback values.
@@ -77,7 +77,7 @@ class Timer implements \Erebot\TimerInterface
      *      when it is called.
      */
     public function __construct(
-        callable $callback,
+        \Erebot\CallableInterface $callback,
         $delay,
         $repeat,
         $args = array()
@@ -130,7 +130,7 @@ class Timer implements \Erebot\TimerInterface
         $this->resource = null;
     }
 
-    public function setCallback(callable $callback)
+    public function setCallback(\Erebot\CallableInterface $callback)
     {
         $this->callback = $callback;
     }

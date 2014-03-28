@@ -20,12 +20,6 @@ class TimerGettersTest extends PHPUnit_Framework_TestCase
 {
     protected $flag;
 
-    public function setUp()
-    {
-        \Erebot\CallableWrapper::initialize();
-        parent::setUp();
-    }
-
     public function helper(\Erebot\Timer $timer, $foo, $bar)
     {
         $this->assertNotEquals('bar', $foo);
