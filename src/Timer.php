@@ -95,7 +95,11 @@ class Timer implements \Erebot\TimerInterface
                     (int) version_compare(PHP_VERSION, '5.3.0', '>=')
                 );
             }
-            self::$binary = $binary;
+            self::$binary = '"' . $binary . '"';
+
+            if (defined('HHVM_VERSION')) {
+                self::$binary .= ' --php';
+            }
         }
 
         $this->delay    = $delay;
