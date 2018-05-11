@@ -19,7 +19,6 @@
     },
     "require": {
         "php": ">=5.3.0",
-        "erebot/callable-wrapper": "^1.0",
         "ext-spl": "*"
     },
     "require-dev": {

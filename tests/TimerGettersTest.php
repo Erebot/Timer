@@ -41,7 +41,7 @@ class TimerGettersTest extends PHPUnit_Framework_TestCase
      */
     public function testGetters()
     {
-        $callback   = \Erebot\CallableWrapper::wrap(array($this, 'helper'));
+        $callback   = array($this, 'helper');
         $args       = array('foo', 'bar');
         $timer      = new \Erebot\Timer($callback, 4.2, 42, $args);
         $this->assertEquals($args, $timer->getArgs());
@@ -56,7 +56,7 @@ class TimerGettersTest extends PHPUnit_Framework_TestCase
      */
     public function testRepetition()
     {
-        $callback   = \Erebot\CallableWrapper::wrap(array($this, 'helper'));
+        $callback   = array($this, 'helper');
         $args       = array('foo', 'bar');
         $timer      = new \Erebot\Timer($callback, 42, FALSE, $args);
 

@@ -54,7 +54,7 @@ class Timer implements \Erebot\TimerInterface
      * Creates a new timer, set off to call the given callback
      * (optionally, repeatedly) when the associated delay passed.
      *
-     * \param Erebot::CallableInterface $callback
+     * \param callable $callback
      *      The callback to call when the timer expires.
      *      See http://php.net/manual/en/language.pseudo-types.php
      *      for acceptable callback values.
@@ -77,7 +77,7 @@ class Timer implements \Erebot\TimerInterface
      *      when it is called.
      */
     public function __construct(
-        \Erebot\CallableInterface $callback,
+        callable $callback,
         $delay,
         $repeat,
         $args = array()
@@ -134,7 +134,7 @@ class Timer implements \Erebot\TimerInterface
         $this->resource = null;
     }
 
-    public function setCallback(\Erebot\CallableInterface $callback)
+    public function setCallback(callable $callback)
     {
         $this->callback = $callback;
     }
@@ -186,6 +186,40 @@ class Timer implements \Erebot\TimerInterface
         return $this->handle;
     }
 
+    /**
+     * Returns a human readable representation of a callable.
+     *
+     * For functions (including anonymous functions created with
+     * create_function()), this is a string containing the name
+     * of that function.
+     * For methods and objects that implement the __invoke()
+     * magic method (including Closures), this is a string
+     * of the form "ClassName::methodName".
+     *
+     * \param mixed $callable
+     *      Callable piece of code to describe.
+     *
+     * \retval string
+     *      Human readable representation of the callable.
+     *
+     * \throw InvalidArgumentException
+     *      The given argument does not represent a callable
+     *      piece of code.
+     */
+    protected static function describeCallable($callable)
+    {
+        if (!is_callable($callable, false, $representation)) {
+            throw new \InvalidArgumentException('Not a valid callable');
+        }
+
+        // This happens for anonymous functions
+        // created with create_function().
+        if (is_string($callable) && $representation == "") {
+            $representation = $callable;
+        }
+        return $representation;
+    }
+
     public function reset()
     {
         if ($this->repeat > 0) {
@@ -229,7 +263,7 @@ class Timer implements \Erebot\TimerInterface
             'var_dump(42); ' .  // Required to make the subprocess send
                                 // a completion notification back to us.
             // We add the name of the callback (useful when debugging).
-            '// '.addslashes(\Erebot\CallableWrapper::represent($this->callback)).'"';
+            '// '.addslashes(self::describeCallable($this->callback)).'"';
 
         $this->resource = proc_open(
             $command,

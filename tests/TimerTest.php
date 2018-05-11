@@ -51,7 +51,7 @@ class TimerTest extends PHPUnit_Framework_TestCase
     public function testNominalCase()
     {
         $this->timer = new \Erebot\Timer(
-            \Erebot\CallableWrapper::wrap(array($this, 'helper')),
+            array($this, 'helper'),
             $this->delay,
             2,
             array('foo', 'bar')

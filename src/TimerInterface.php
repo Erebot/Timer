@@ -33,11 +33,11 @@ interface TimerInterface
     /**
      * Sets the callback associated with this timer.
      *
-     * \param Erebot::CallableInterface $callback
+     * \param callable $callback
      *      This callable object will be called
      *      whenever the timer fires.
      */
-    public function setCallback(\Erebot\CallableInterface $callback);
+    public function setCallback(callable $callback);
 
     /**
      * Returns a reference to the callback associated with this timer.
